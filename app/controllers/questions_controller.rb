@@ -3,14 +3,15 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+    @answers = Answer.all
   end
 
   def new
-    @question = Question.new
+    @question = current_user.questions.build
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = current_user.questions.build(question_params)
     if @question.save
       flash[:notice] = "Question added successfully"
       redirect_to "/"
@@ -23,6 +24,10 @@ class QuestionsController < ApplicationController
   #    format.html {  redirect_to root_path }
   #    format.json
   #  end
+  end
+
+  def show
+    @question = Question.find(params[:id])
   end
 
 

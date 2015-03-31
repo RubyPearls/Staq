@@ -1,4 +1,12 @@
-<h1> Hi</h1>
+<h1>Drop the stack</h1>
 
+Trending Questions:
+
+<% @questions.each do |question| %>
+<li> <a href="/questions/<%= question.id%>"><%= question.title %></a></li>
+
+<% end %>
+
+</br>
 
 <%= link_to "Add a Question", new_question_path %>
