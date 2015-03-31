@@ -98,6 +98,9 @@ GEM
     execjs (2.4.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -209,11 +212,6 @@ GEM
     tilt (1.4.1)
     turbolinks (2.5.3)
       coffee-rails
-    twitter-bootstrap-rails (3.2.0)
-      actionpack (~> 4.1)
-      execjs (~> 2.2)
-      rails (~> 4.1)
-      railties (~> 4.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.1)
@@ -239,7 +237,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   devise
-  factory_girl
+  factory_girl_rails
   jquery-rails
   kaminari
   letter_opener
@@ -254,6 +252,5 @@ DEPENDENCIES
   simple_token_authentication
   spring
   turbolinks
-  twitter-bootstrap-rails
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

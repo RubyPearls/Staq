@@ -1,0 +1,8 @@
+class Answer < ActiveRecord
+  validates :content, :presence => true
+
+  belongs_to :users
+
+  belongs_to :questions
+
+end
