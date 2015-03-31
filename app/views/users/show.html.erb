@@ -1,0 +1,22 @@
+<% if user_signed_in? && current_user == @user %>
+
+    <%= form_for Question.new, remote: true do |f| %>
+    <div class='form-group' >
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+</div>
+
+  <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg", id: "new_question") do %>
+        <i class="glyphicon glyphicon-star"></i> Add question
+  <% end %>
+<% end %>
+
+<% end %>
+
+<ul id='question-list'>
+  <% @questions.each do |question| %>
+    <%= render question, question: question %>
+  <% end %>
+</ul>
