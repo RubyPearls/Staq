@@ -17,7 +17,7 @@ class AnswersController < ApplicationController
       flash[:notice] = "Comment added!"
       respond_to do |format|
        format.html {  render question_path(@question) }
-       format.js
+       format.js  
      end
 		else
       flash[:alert] = "Sorry! Try again"

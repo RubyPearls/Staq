@@ -1,8 +1,9 @@
-<%= @question.title %>
+<strong><%= @question.title %></strong>
+</br>
 
-<%= @question.content %>
+<div class="well"><%= @question.content %>
 
-<div id="answer-list">
+<div class="answer-list">
 <% if @question.answers.any? %>
  <ul>
   <% @question.answers.each do |answer| %>
@@ -18,7 +19,9 @@
 <% end %>
 </div>
 
-<%= link_to "Add an Answer", new_question_answer_path(@question), remote: true %>
+</div>
+
+<%= link_to "Add an Answer", new_question_answer_path(@question), remote: true %> |
 
 
 <a href="/">Return to main page</a>
