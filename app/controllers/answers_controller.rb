@@ -7,6 +7,10 @@ class AnswersController < ApplicationController
   def new
     @question = Question.find(params[:question_id])
     @answer = Answer.new
+    respond_to do |format|
+      format.html {  render :new }
+      format.js
+    end
   end
 
   def create
@@ -16,16 +20,15 @@ class AnswersController < ApplicationController
 
 		if @answer.save
       flash[:notice] = "Comment added!"
-			redirect_to question_path(@question)
+        respond_to do |format|
+          format.html {  redirect_to question_path(@question) }
+          format.js
+        end
 		else
       flash[:alert] = "Sorry! Try again"
 			render 'new'
 		end
 
-      respond_to do |format|
-       format.html {  render question_path(@question) }
-       format.json
-    end
 	end
 
   def show
@@ -33,7 +36,9 @@ class AnswersController < ApplicationController
   end
 
   def destroy
+
     @answer = Answer.find(params[:id])
+    @question = @answer.question
     @answer.destroy
     redirect_to question_path(@question)
 

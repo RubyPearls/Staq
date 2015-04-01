@@ -1,9 +1,8 @@
-<div id="answers">
-  <%= form_for [@question, @answer], remote: true do |f| %>
+<%= form_for [@question, @answer], remote: true do |f| %>
   <%= f.label :content %>
   <%= f.text_area :content %>
   <%= f.submit %>
-  <% end %>
-</div>
+<% end %>
 
-<a href="/">Return to main page</a>
+
+<%= link_to 'Return to main page', root_path %>
