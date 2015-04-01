@@ -11,21 +11,18 @@ class AnswersController < ApplicationController
 
   def create
 		@question = Question.find(params[:question_id])
-		@answer = @question.answers.create(answer_params)
-		@answer.question_id == current_user.id
+		@answer = @question.answers.new(answer_params)
 
 		if @answer.save
       flash[:notice] = "Comment added!"
-			redirect_to question_path(@question)
+      respond_to do |format|
+       format.html {  render question_path(@question) }
+       format.js
+     end
 		else
       flash[:alert] = "Sorry! Try again"
 			render 'new'
 		end
-
-      respond_to do |format|
-       format.html {  render question_path(@question) }
-       format.json
-    end
 	end
 
   def show
