@@ -1,6 +1,6 @@
 <div class="jumbotron"><h1>Drop the stack</h1></div>
 
-Trending Questions:
+<div class="container">Trending Questions:
 
 <% @questions.each do |question| %>
 <li> <a href="/questions/<%= question.id%>"><%= question.title %></a></li>
@@ -14,3 +14,4 @@ Trending Questions:
 
 
 <a href="/">Return to main page</a>
+</div>

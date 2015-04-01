@@ -19,25 +19,15 @@ class AnswersController < ApplicationController
 
 		if @answer.save
       flash[:notice] = "Comment added!"
-<<<<<<< HEAD
         respond_to do |format|
           format.html {  redirect_to question_path(@question) }
           format.js
         end
-=======
-      respond_to do |format|
-       format.html {  render question_path(@question) }
-       format.js  
-     end
->>>>>>> master
 		else
       flash[:alert] = "Sorry! Try again"
 			render 'new'
 		end
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 	end
 
   def show
